@@ -1,0 +1,38 @@
+#Jakub Litwiak
+#31.10.2025
+
+####zadanie2####
+dane_iris <- iris #wywołuje dataset iris i przypisuje go do zmiennej dane_iris
+
+iris_setosa <- dane_iris[1:50, ]  #gatunek iris setosa występuje w tabeli od 1 do 50-go wiersza, dlatego wybieram te wiersze i przypisuje zmiennej iris_setosa
+iris_versicolor <- dane_iris[51:100, ]
+iris_virginica <- dane_iris[100:150, ]
+
+par(mfrow = c(1,3)) # za pomocą tej funkcji wyświetlam 3 histogramy obok siebie
+
+hist(iris_setosa$Petal.Length, #tworze histogram na podstawie wartości zmiennej iris_setosa, określam również za pomocą polecenia '$Petal.Length' z której kolumny potrzebuje wartości 
+     xlab = 'dlugość działek kielicha', # określam nazwe osi x 
+     ylab = 'częstość występowania', # określam nazwę osi y 
+     ylim = c(0,14), # ustawiam granice wartości skali osi y, ponieważ bez tego ustawienia wartości słupków wykraczają poza skalę
+     main = 'Iris setosa', #określam tytuł histogramu
+     col = 'red', #określam kolor słupków 
+     border = "black", #określam kolor obramowania słupków
+     )
+
+hist(iris_versicolor$Petal.Length, #tworze histogram na podstawie wartości zmiennej iris_versicolor, określam również za pomocą polecenia '$Petal.Length' z której kolumny potrzebuje wartości 
+     xlab = 'dlugość działek kielicha', # określam nazwe osi x 
+     ylab = 'częstość występowania', # określam nazwę osi y 
+     main = 'Iris versicolor', #określam tytuł histogramu
+     col = 'purple', #określam kolor słupków 
+     border = "black", #określam kolor obramowania słupków
+)
+
+hist(iris_virginica$Petal.Length, #tworze histogram na podstawie wartości zmiennej iris_virginica, określam również za pomocą polecenia '$Petal.Length' z której kolumny potrzebuje wartości 
+     xlab = 'dlugość działek kielicha', # określam nazwe osi x 
+     ylab = 'częstość występowania', # określam nazwę osi y 
+     ylim = c(0,20), # ustawiam granice wartości skali osi y, ponieważ bez tego ustawienia wartości słupków wykraczają poza skalę
+     main = 'Iris virginica', #określam tytuł histogramu
+     col = 'yellow', #określam kolor słupków 
+     border = "black", #określam kolor obramowania słupków
+)
+
